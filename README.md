@@ -13,4 +13,5 @@
 打开 PowerShell 或终端，运行以下命令：
 
 ```powershell
-scoop bucket add zed-loc [https://github.com/SKIPPINGpetticoatconvent/zed-loc-scoop-bucket](https://github.com/SKIPPINGpetticoatconvent/zed-loc-scoop-bucket)
+scoop bucket add zed-loc https://github.com/SKIPPINGpetticoatconvent/zed-loc-scoop-bucket
+```
