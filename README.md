@@ -15,3 +15,13 @@
 ```powershell
 scoop bucket add zed-loc https://github.com/SKIPPINGpetticoatconvent/zed-loc-scoop-bucket
 ```
+### 2. 安装 Zed 汉化版
+```
+scoop install zed-loc
+```
+
+### 3. 如何更新
+
+```
+scoop update zed-loc
+```
