@@ -6,7 +6,7 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/SKIPPINGpetticoatconvent/zed-loc/releases/download/v0.213.7/zed-windows.zip",
-      "hash": "7944C40C5B35D660B8EC1E24B42BA1669BD2845B605E94D182AD9B771E784A8B"
+      "hash": "4B4F4623E1708FA7A7D17F7AC484F40B6AE2A1D522EBB38F4C1BBDA4B0C828E2"
     }
   },
   "bin": "zed.exe",
