@@ -25,3 +25,11 @@ scoop install zed-loc
 ```
 scoop update zed-loc
 ```
+
+### 4.如何使用?
+在终端输入zed即可打开软件
+### 鸣谢
+
+1. [TC999/zed-loc翻译文件提供](https://github.com/TC999/zed-loc)
+2. [Zed 编辑器](https://github.com/zed-industries/zed)
+3. [Roo Code](https://roocode.com)
