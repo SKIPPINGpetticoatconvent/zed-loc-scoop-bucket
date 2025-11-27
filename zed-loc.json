@@ -16,16 +16,10 @@
   },
   "architecture": {
     "64bit": {
-      "hash": "5C28583E7779B485E2CD4C19401ECCFC41FDAD9677CBA901E82B75642B56634D",
-      "url": "https://github.com/SKIPPINGpetticoatconvent/zed-loc/releases/download/v0.214.5/zed-windows.zip"
+      "url": "https://github.com/SKIPPINGpetticoatconvent/zed-loc/releases/download/v0.214.5/zed-windows.zip",
+      "hash": "98814153631E72E2C317B595ED9F3E998842CB7507147302ECAA1A33C49C2EAA"
     }
   },
-  "shortcuts": [
-    [
-      "zed.exe",
-      "Zed"
-    ]
-  ],
   "post_install": [
     "Write-Host 'Adding Context Menu items...'",
     "$zedPath = \"$dir\\zed.exe\"",
@@ -46,5 +40,11 @@
     "Write-Host 'Removing Context Menu items...'",
     "if (Test-Path \"HKCU:\\Software\\Classes\\*\\shell\\Zed\") { Remove-Item \"HKCU:\\Software\\Classes\\*\\shell\\Zed\" -Recurse -Force }",
     "Write-Host 'Context Menu removed.'"
+  ],
+  "shortcuts": [
+    [
+      "zed.exe",
+      "Zed"
+    ]
   ]
 }
