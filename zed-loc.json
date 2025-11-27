@@ -10,12 +10,6 @@
     }
   },
   "bin": "zed.exe",
-  "shortcuts": [
-    [
-      "zed.exe",
-      "Zed"
-    ]
-  ],
   "checkver": {
     "github": "https://github.com/SKIPPINGpetticoatconvent/zed-loc"
   },
@@ -25,5 +19,11 @@
         "url": "https://github.com/SKIPPINGpetticoatconvent/zed-loc/releases/download/$version/zed-windows.zip"
       }
     }
-  }
+  },
+  "shortcuts": [
+    [
+      "zed.exe",
+      "Zed"
+    ]
+  ]
 }
