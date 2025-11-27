@@ -28,16 +28,19 @@
   ],
   "post_install": [
     "Write-Host 'Adding Context Menu items...'",
-    "$zedPath = \"$dir\\zed.exe\".Replace(\"\\\", \"\\\\\")",
-    "$iconPath = \"$dir\\zed.exe,0\".Replace(\"\\\", \"\\\\\")",
-    "reg add \"HKCU\\Software\\Classes\\*\\shell\\Zed\" /v \"\" /t REG_SZ /d \"Open with Zed\" /f",
-    "reg add \"HKCU\\Software\\Classes\\*\\shell\\Zed\" /v \"Icon\" /t REG_SZ /d \"$iconPath\" /f",
-    "reg add \"HKCU\\Software\\Classes\\*\\shell\\Zed\\command\" /v \"\" /t REG_SZ /d \"\\\"$zedPath\\\" \\\"%1\\\"\" /f",
+    "$regPath = \"HKCU:\\Software\\Classes\\*\\shell\\Zed\"",
+    "$commandPath = \"$regPath\\command\"",
+    "if (-not (Test-Path $regPath)) { New-Item -Path $regPath -Force | Out-Null }",
+    "if (-not (Test-Path $commandPath)) { New-Item -Path $commandPath -Force | Out-Null }",
+    "Set-Item -Path $regPath -Value \"Open with Zed\"",
+    "Set-ItemProperty -Path $regPath -Name \"Icon\" -Value \"$dir\\zed.exe,0\"",
+    "$cmdVal = \"`\"$dir\\zed.exe`\" `\"%1`\"\"",
+    "Set-Item -Path $commandPath -Value $cmdVal",
     "Write-Host 'Context Menu added.'"
   ],
   "pre_uninstall": [
     "Write-Host 'Removing Context Menu items...'",
-    "reg delete \"HKCU\\Software\\Classes\\*\\shell\\Zed\" /f",
+    "if (Test-Path \"HKCU:\\Software\\Classes\\*\\shell\\Zed\") { Remove-Item \"HKCU:\\Software\\Classes\\*\\shell\\Zed\" -Recurse -Force }",
     "Write-Host 'Context Menu removed.'"
   ]
 }
