@@ -3,12 +3,6 @@
   "description": "Zed Editor (Localized)",
   "homepage": "https://github.com/SKIPPINGpetticoatconvent/zed-loc",
   "license": "GPL-3.0-only",
-  "architecture": {
-    "64bit": {
-      "url": "https://github.com/SKIPPINGpetticoatconvent/zed-loc/releases/download/v0.214.5/zed-windows.zip",
-      "hash": "5C28583E7779B485E2CD4C19401ECCFC41FDAD9677CBA901E82B75642B56634D"
-    }
-  },
   "bin": "zed.exe",
   "checkver": {
     "github": "https://github.com/SKIPPINGpetticoatconvent/zed-loc"
@@ -20,10 +14,30 @@
       }
     }
   },
+  "architecture": {
+    "64bit": {
+      "hash": "5C28583E7779B485E2CD4C19401ECCFC41FDAD9677CBA901E82B75642B56634D",
+      "url": "https://github.com/SKIPPINGpetticoatconvent/zed-loc/releases/download/v0.214.5/zed-windows.zip"
+    }
+  },
   "shortcuts": [
     [
       "zed.exe",
       "Zed"
     ]
+  ],
+  "post_install": [
+    "Write-Host 'Adding Context Menu items...'",
+    "$zedPath = \"$dir\\zed.exe\".Replace(\"\\\", \"\\\\\")",
+    "$iconPath = \"$dir\\zed.exe,0\".Replace(\"\\\", \"\\\\\")",
+    "reg add \"HKCU\\Software\\Classes\\*\\shell\\Zed\" /v \"\" /t REG_SZ /d \"Open with Zed\" /f",
+    "reg add \"HKCU\\Software\\Classes\\*\\shell\\Zed\" /v \"Icon\" /t REG_SZ /d \"$iconPath\" /f",
+    "reg add \"HKCU\\Software\\Classes\\*\\shell\\Zed\\command\" /v \"\" /t REG_SZ /d \"\\\"$zedPath\\\" \\\"%1\\\"\" /f",
+    "Write-Host 'Context Menu added.'"
+  ],
+  "pre_uninstall": [
+    "Write-Host 'Removing Context Menu items...'",
+    "reg delete \"HKCU\\Software\\Classes\\*\\shell\\Zed\" /f",
+    "Write-Host 'Context Menu removed.'"
   ]
 }
