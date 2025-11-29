@@ -1,12 +1,12 @@
 {
-  "version": "v0.214.6",
+  "version": "v0.214.7",
   "description": "Zed Editor (Localized)",
   "homepage": "https://github.com/SKIPPINGpetticoatconvent/zed-loc",
   "license": "GPL-3.0-only",
   "architecture": {
     "64bit": {
-      "hash": "06C6F120855A72C20C9D17BD15513B078A2A960386EB67C659EFAD4417AD7F8A",
-      "url": "https://github.com/SKIPPINGpetticoatconvent/zed-loc/releases/download/v0.214.6/zed-windows.zip"
+      "hash": "DF814C48438EDE7F8415BEC23A07096B000651603F7924E619E1B0C198B9FCAF",
+      "url": "https://github.com/SKIPPINGpetticoatconvent/zed-loc/releases/download/v0.214.7/zed-windows.zip"
     }
   },
   "bin": "zed.exe",
