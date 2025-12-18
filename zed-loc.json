@@ -5,8 +5,8 @@
   "license": "GPL-3.0-only",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/SKIPPINGpetticoatconvent/zed-loc/releases/download/v0.217.2/zed-windows.zip",
-      "hash": "94996E14E04C5F52337B68325973A1F5A6FFF852AF96CE229E64CD2E97D365E4"
+      "hash": "94996E14E04C5F52337B68325973A1F5A6FFF852AF96CE229E64CD2E97D365E4",
+      "url": "https://github.com/SKIPPINGpetticoatconvent/zed-loc/releases/download/v0.217.2/zed-windows.zip"
     }
   },
   "bin": "zed.exe",
